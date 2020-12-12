@@ -2,7 +2,7 @@
 /**
  * class qui gère tous l'application
  */
-use App\core;
+use App\core\Autoloader;
 
 class App
 {
