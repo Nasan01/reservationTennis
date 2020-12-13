@@ -2,8 +2,8 @@
 /**
  * class qui gère tous l'application
  */
-use App\core\Autoloader;
-use \App\core\Database;
+use App\Autoloader;
+use \App\Core\Database;
 
 class App
 {
@@ -11,7 +11,7 @@ class App
     private $titre;
     public static function load(){
         session_start();
-        require 'core/Autoloader.php';
+        require ROOT . '/App/Autoloader.php';
         Autoloader::register();
     }
 
