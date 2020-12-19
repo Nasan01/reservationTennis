@@ -9,7 +9,10 @@ class TableReservation
 
     public static function getLastReservation(){
         $db = new Database('reservationTennis');
-        $data = $db->query("SELECT * FROM reservation", 'App\Table\TableReservation');
+        $data = $db->query(
+            "SELECT * FROM reservation",
+            'App\Table\TableReservation'
+        );
         return $data;
     }
 
