@@ -24,6 +24,9 @@ if($p === 'accueilNonAdherents'){
 }elseif ($p === 'reservationNonAdherents'){
     $app->setTitlePage('reservation');
     require ROOT . '/page/nonAdherents/reservation.php';
+}elseif ($p === 'pager'){
+    $app->setTitlePage('reservation');
+    require ROOT . '/page/nonAdherents/reservation.php';
 }
 
 $content = ob_get_clean();

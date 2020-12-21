@@ -4,7 +4,7 @@
             <h2>Menu</h2>
             <ul>
                 <li><a href="index.php">Accueil</a></li>
-                <li><a href="#">Réservation</a></li>
+                <li><a href="index.php?p=reservationNonAdherents">Réservation</a></li>
                 <li><a href="#">Manifestation</a></li>
                 <li><a href="#">S'inscrire (Nouvel utilisateur)</a></li>
                 <li><a href="#">Connexion</a></li>
@@ -24,11 +24,23 @@
                     $dateConverti = date('D-d-M-Y', $dateTimeStamp);
                     return $dateConverti;
                 }
-                $test = \App\Table\TableDateHeure::getTime();
-                $tabDay = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
                 ?>
 
             <div class="test">
+                <?php
+                    if (isset($_GET['debut'])){
+                        $debut = (int) $_GET['debut'];
+                        if($debut < 0){
+                            $debut = 0;
+                        }
+                    }else{
+                        $debut = 0;
+                    }
+                ?>
+                <div class="pager">
+                    <a href="index.php?p=pager&debut=<?= $debut-7?>">semaine precedent</a>
+                    <a href="index.php?p=pager&debut=<?= $debut+7?>">semaine suivant</a>
+                </div>
                 <table class="table" border="1">
                     <tr>
                         <td>jour/heure</td>
@@ -39,10 +51,16 @@
                         <td>16h-18h</td>
                         <td>18h-20h</td>
                     </tr>
-                    <?php   foreach (\App\Table\TableReservation::getTest(0, 7) as $test): ?>
+                    <?php   foreach (\App\Table\TableReservation::getTest($debut, 7) as $test): ?>
                         <tr>
                             <td><?= convertDate($test->date);?></td>
-                            <td><?= $test->nbr_8_10;?> court(s) libre(s)</td>
+                            <td><?php
+                                if($test->nbr_8_10 == 10){
+                                    echo "vous avez reservez";
+                                }else{
+                                    echo $test->nbr_8_10;
+                                }
+                                ?> court(s) libre(s)</td>
                             <td><?= $test->nbr_10_12;?> court(s) libre(s)</td>
                             <td><?= $test->nbr_12_14;?> court(s) libre(s)</td>
                             <td><?= $test->nbr_14_16;?> court(s) libre(s)</td>
