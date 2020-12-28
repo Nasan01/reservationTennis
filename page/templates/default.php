@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../public/css/style.css">
+    <script src="../public/js/jquery-3.5.0.min.js"></script>
+    <script src="../public/js/bootstrap.min.js"></script>
     <title><?= $app->getTitlePage();?></title>
 </head>
 <body>
@@ -16,6 +18,9 @@
         </header>
         <div class="row">
             <?= $content;?>
+        </div>
+        <div  id="footer">
+            <p class="text-center">Big thanks for the author</p>
         </div>
     </div>
 </body>

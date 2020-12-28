@@ -16,6 +16,12 @@ if(isset($_GET['p'])){
     $p = 'accueilNonAdherents';
 }
 
+if(isset($_GET['action'])){
+    $action = $_GET['action'];
+}else{
+    $action = ' ';
+}
+
 ob_start();
 
 if($p === 'accueilNonAdherents'){
@@ -27,6 +33,19 @@ if($p === 'accueilNonAdherents'){
 }elseif ($p === 'pager'){
     $app->setTitlePage('reservation');
     require ROOT . '/page/nonAdherents/reservation.php';
+}elseif ($p === 'manifestation'){
+    $app->setTitlePage('manifestation');
+    require ROOT . '/page/manifestation.php';
+}elseif ($p === 'inscription'){
+    $app->setTitlePage('Inscription');
+    require ROOT . '/page/nonAdherents/inscription.php';
+}elseif($p === 'attente'){
+    $app->setTitlePage('waitConfirmation');
+    require  ROOT . '/page/nonAdherents/attente.php';
+}
+
+if($action === 'inscription'){
+    require  ROOT . "/page/action/actionInscription.php";
 }
 
 $content = ob_get_clean();
