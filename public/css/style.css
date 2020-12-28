@@ -1,0 +1,16 @@
+.header{
+    background-color: peru;
+    height: 66px;
+    text-align: center;
+}
+
+#myparent div{
+    border: 1px solid #000000;
+    background-color: peru;
+}
+
+#footer{
+    height: 60px;
+    padding: 12px;
+    background: #32FF3B;
+}
