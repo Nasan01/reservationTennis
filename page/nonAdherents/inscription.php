@@ -1,6 +1,7 @@
 <?php
 
 if(isset($_POST['inscription'])){
+    /*
     $_SESSION['nom_m'] = htmlspecialchars($_POST['nom']);
     $_SESSION['prenom_m'] = htmlspecialchars($_POST['prenom']);
     $_SESSION['rue_m'] = htmlspecialchars($_POST['rue']);
@@ -11,6 +12,23 @@ if(isset($_POST['inscription'])){
     $_SESSION['numFFT_l'] = htmlspecialchars($_POST['numFFT']);
     $_SESSION['login_m'] = htmlspecialchars($_POST['login']);
     $_SESSION['mdp_m'] = sha1($_POST['mdp']);
+    */
+    $newMembre = new \App\Table\TableMembre();
+    $newMembre->addMembre(
+        htmlspecialchars($_POST['nom']),
+        htmlspecialchars($_POST['prenom']),
+        htmlspecialchars($_POST['rue']),
+        htmlspecialchars($_POST['codePostal']),
+        htmlspecialchars($_POST['ville']),
+        htmlspecialchars($_POST['dateNaiss']),
+        htmlspecialchars($_POST['tel']),
+        htmlspecialchars($_POST['numFFT']),
+        htmlspecialchars($_POST['login']),
+        sha1($_POST['mdp'])
+    );
+    $_SESSION['login_m'] = htmlspecialchars($_POST['login']);
+    $_SESSION['mdp_m'] = sha1($_POST['mdp']);
+    header("Location: membre.php");
 }
 
 ?>
@@ -23,7 +41,7 @@ if(isset($_POST['inscription'])){
                 <li><a href="<?= 'index.php?p=reservationNonAdherents'?>">Réservation</a></li>
                 <li><a href="index.php?p=manifestation">Manifestation</a></li>
                 <li><a href="index.php?p=inscription">S'inscrire (Nouvel utilisateur)</a></li>
-                <li><a href="#">Connexion</a></li>
+                <li><a href="index.php?p=connexion">Connexion</a></li>
             </ul>
         </div>
     </div>

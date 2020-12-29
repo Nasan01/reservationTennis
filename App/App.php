@@ -39,4 +39,13 @@ class App
 
     /*--------------end about title----------------*/
 
+    /*------------about member---------------------*/
+
+    public static function connectPlease(){
+        header('Location: index.php?p=connexion');
+    }
+
+
+    /*------------end about member-----------------*/
+
 }

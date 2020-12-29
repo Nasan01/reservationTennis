@@ -42,6 +42,9 @@ if($p === 'accueilNonAdherents'){
 }elseif($p === 'attente'){
     $app->setTitlePage('waitConfirmation');
     require  ROOT . '/page/nonAdherents/attente.php';
+}elseif($p === 'connexion'){
+    $app->setTitlePage('Connexion');
+    require ROOT . '/page/nonAdherents/connexion.php';
 }
 
 if($action === 'inscription'){
