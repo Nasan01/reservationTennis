@@ -32,6 +32,12 @@ if($p === "accueil"){
     require ROOT . "/page/adherents/modificationProfil.php";
 }elseif($p === 'deconnexion'){
     require ROOT . '/page/adherents/deconnexion.php';
+}elseif($p === 'reservation'){
+    $app->setTitlePage('reservation');
+    require ROOT . '/page/adherents/reservation.php';
+}elseif ($p === 'manifestaion'){
+    $app->setTitlePage('manifestation');
+    require ROOT . '/page/manifestation.php';
 }
 
 

@@ -42,5 +42,9 @@
                 </table>
             </div>
         </div>
+        <div class="row text-right">
+            <h3>Only for entraineur</h3>
+            <p> <a href="index.php?p=conEntraineur">Click if you are entraineur</a></p>
+        </div>
     </div>
 </div>

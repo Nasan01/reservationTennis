@@ -15,7 +15,7 @@ if(isset($_POST['connexion'])){
 ?>
 
 <div class="row container">
-    <div class="row">
+    <div class="row container">
         <div class="col-md-3">
             <div class="row">
                 <h2>Menu</h2>

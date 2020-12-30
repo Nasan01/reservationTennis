@@ -45,6 +45,9 @@ if($p === 'accueilNonAdherents'){
 }elseif($p === 'connexion'){
     $app->setTitlePage('Connexion');
     require ROOT . '/page/nonAdherents/connexion.php';
+}elseif($p === 'conEntraineur'){
+    $app->setTitlePage('Entraineur connexion');
+    require ROOT . '/page/entraineurs/connexion.php';
 }
 
 if($action === 'inscription'){
