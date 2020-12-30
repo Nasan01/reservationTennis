@@ -45,6 +45,49 @@ class TableMembre
         return $in;
     }
 
+    public static function getAboutMembre($id){
+        $db = new Database('reservationTennis');
+        $in = $db->prepare(
+            "SELECT * FROM membres 
+                      WHERE id_membre = ?",
+            [$id],
+            'App\Table\TableMembre',
+            true
+        );
+        return $in;
+    }
+
+    public function modifierAbout($nom, $prenom, $rue, $codePostal, $ville, $dateNaiss, $tel, $numFFT, $login, $mdp, $id){
+        $db = new Database('reservationTennis');
+        $db->insert(
+            "UPDATE membres 
+                      SET nom_membre = :nom, 
+                          prenom_membre = :prenom,
+                          rue_membre = :rue,
+                          codePostal_membre = :codePostal,
+                          ville_membre = :ville,
+                          dateNaiss_membre = :dateNaiss,
+                          tel_membre = :tel,
+                          numFFT_membre = :numFFT,
+                          login_membre = :login,
+                          mdp_membre = :mdp
+                      WHERE id_membre = :id",
+            [
+                "nom"=>$nom,
+                "prenom"=>$prenom,
+                "rue"=>$rue,
+                "codePostal"=>$codePostal,
+                "ville"=>$ville,
+                "dateNaiss"=>$dateNaiss,
+                "tel"=>$tel,
+                "numFFT"=>$numFFT,
+                "login"=>$login,
+                "mdp"=>$mdp,
+                "id"=>$id
+            ]
+        );
+    }
+
     public function is_connected(){
 
         return (isset($_SESSION['login_m']) && isset($_SESSION['mdp_m']));

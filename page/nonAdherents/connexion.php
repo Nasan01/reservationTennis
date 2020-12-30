@@ -30,7 +30,7 @@ if(isset($_POST['connexion'])){
         </div>
         <div class="col-md-9">
             <h2>Connexion</h2>
-            <form action="" method="post">
+            <form action="" method="post" class="form-horizontal">
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="login">Login:</label>
                     <div class="col-sm-10">
@@ -43,6 +43,9 @@ if(isset($_POST['connexion'])){
                         <input type="password" class="form-control" id="mdp" name="mdp" placeholder="Enter password">
                     </div>
                 </div>
+                <?php if(isset($error) && $error): ?>
+                    <div style="color:red;">Mauvais Login ou Mot de passe</div>
+                <?php endif; ?>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" name="connexion" class="btn btn-success">Connexion</button>

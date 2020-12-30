@@ -26,8 +26,10 @@ if(isset($_POST['inscription'])){
         htmlspecialchars($_POST['login']),
         sha1($_POST['mdp'])
     );
-    $_SESSION['login_m'] = htmlspecialchars($_POST['login']);
-    $_SESSION['mdp_m'] = sha1($_POST['mdp']);
+    $in = \App\Table\TableMembre::find($_POST['login'], $_POST['mdp']);
+    $_SESSION['id_m'] = $in->id_membre;
+    $_SESSION['login_m'] = $in->login_membre;
+    $_SESSION['mdp_m'] = $in->mdp_membre;
     header("Location: membre.php");
 }
 

@@ -4,10 +4,10 @@
             <h2>Menu</h2>
             <ul>
                 <li><a href="index.php">Accueil</a></li>
-                <li><a href="index.php?p=reservationNonAdherents">Réservation</a></li>
-                <li><a href="#">Manifestation</a></li>
-                <li><a href="#">S'inscrire (Nouvel utilisateur)</a></li>
-                <li><a href="#">Connexion</a></li>
+                <li><a href="<?= 'index.php?p=reservationNonAdherents'?>">Réservation</a></li>
+                <li><a href="index.php?p=manifestation">Manifestation</a></li>
+                <li><a href="index.php?p=inscription">S'inscrire (Nouvel utilisateur)</a></li>
+                <li><a href="index.php?p=connexion">Connexion</a></li>
             </ul>
         </div>
     </div>

@@ -19,7 +19,7 @@
         <div class="row">
             <?= $content;?>
         </div>
-        <div  id="footer">
+        <div class="row" id="footer">
             <p class="text-center">Big thanks for the author</p>
         </div>
     </div>

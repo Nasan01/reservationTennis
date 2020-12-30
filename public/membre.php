@@ -8,7 +8,6 @@ App::load();
 $app = App::getInstance();
 $membre = new \App\Table\TableMembre();
 
-var_dump($membre->is_connected());
 
 if(!$membre->is_connected()){
     App::connectPlease();
@@ -25,6 +24,14 @@ ob_start();
 if($p === "accueil"){
     $app->setTitlePage('Accueil');
     require ROOT . "/page/adherents/accueil.php";
+}elseif($p === 'profil'){
+    $app->setTitlePage('profil');
+    require ROOT . "/page/adherents/profil.php";
+}elseif($p === 'modification'){
+    $app->setTitlePage('profilModification');
+    require ROOT . "/page/adherents/modificationProfil.php";
+}elseif($p === 'deconnexion'){
+    require ROOT . '/page/adherents/deconnexion.php';
 }
 
 
