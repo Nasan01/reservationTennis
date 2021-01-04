@@ -34,6 +34,9 @@ if($p === 'connected'){
 }elseif($p === 'modifEntraineur'){
     $app->setTitlePage('Entraineur modif');
     require ROOT . '/page/admin/modifEntraineur.php';
+}elseif($p === 'supprimerEntraineur'){
+    $app->setTitlePage('none');
+    require ROOT . '/page/admin/deleteEntraineur.php';
 }
 
 $content = ob_get_clean();

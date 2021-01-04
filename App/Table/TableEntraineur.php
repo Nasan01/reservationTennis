@@ -83,6 +83,18 @@ class TableEntraineur
         );
     }
 
+    public function deleteEntraineur($id){
+        $db = new Database('reservationTennis');
+        $db->insert("
+            DELETE FROM entraineurs 
+            WHERE id_entraineur = :id 
+        ",
+            [
+                'id'=>$id
+            ]
+        );
+    }
+
     public static function versConnexion(){
         header('Location: index.php?p=conEntraineur');
     }

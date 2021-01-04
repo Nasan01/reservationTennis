@@ -25,7 +25,7 @@
                     <td><?= $all->nom_entraineur;?></td>
                     <td><?= $all->prenom_entraineur;?></td>
                     <td><a href="admin.php?p=modifEntraineur&id_e=<?= $all->id_entraineur;?>">modifier</a></td>
-                    <td><a href="admin.php?p=supprimer&id_e=<?= $all->id_entraineur;?>">Supprimer</a></td>
+                    <td><a href="admin.php?p=supprimerEntraineur&id_e=<?= $all->id_entraineur;?>">Supprimer</a></td>
                 </tr>
             <?php endforeach;?>
         </table>
