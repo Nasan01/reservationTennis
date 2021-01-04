@@ -25,6 +25,20 @@ class TableEntraineur
         return $in;
     }
 
+    public static function getoneEntraineur($id){
+        $db = new Database('reservationTennis');
+        $in = $db->prepare(
+            "SELECT * FROM entraineurs
+                      WHERE id_entraineur = :id_entraineur",
+            [
+                "id_entraineur"=>$id
+            ],
+            'App\Table\TableEntraineur',
+            true
+        );
+        return $in;
+    }
+
     public static function getAllwithLimit($debut){
         $db = new Database('reservationTennis');
         $data = $db->query(
@@ -45,6 +59,26 @@ class TableEntraineur
                 'prenom'=>$prenom,
                 'login'=>$login,
                 'mdp'=>$mdp
+            ]
+        );
+    }
+
+    public function modifierEntraineur($nom, $prenom, $login, $mdp, $id){
+        $db = new Database('reservationTennis');
+        $db->insert("
+            UPDATE entraineurs SET
+                nom_entraineur = :nom,
+                prenom_entraineur = :prenom,
+                login_entraineur = :login,
+                mdp_entraineur = :mdp
+            WHERE id_entraineur = :id 
+        ",
+            [
+                'nom'=>$nom,
+                'prenom'=>$prenom,
+                'login'=>$login,
+                'mdp'=>$mdp,
+                'id'=>$id
             ]
         );
     }

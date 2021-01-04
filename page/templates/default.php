@@ -30,6 +30,9 @@
             background: #683535;
             box-shadow:  rgba(0, 0, 0, 0.7) 0 0 50px 0;
         }
+        a{
+            color: #23b7bb;
+        }
         #all{
             background: url("../public/images/tennis 2.jpeg");
             color: antiquewhite;

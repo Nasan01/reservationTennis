@@ -31,6 +31,9 @@ if($p === 'connected'){
 }elseif($p === 'creerEntraineur'){
     $app->setTitlePage('Entraineur Creation');
     require ROOT . '/page/admin/creerEntraineur.php';
+}elseif($p === 'modifEntraineur'){
+    $app->setTitlePage('Entraineur modif');
+    require ROOT . '/page/admin/modifEntraineur.php';
 }
 
 $content = ob_get_clean();
