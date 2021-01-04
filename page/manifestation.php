@@ -38,7 +38,7 @@
                         <div><?= $value->effectif_manifestation; ?></div>
                         <div><?= $value->animateur_manifestation; ?></div>
                         <div><?= $value->nbre_inscrit; ?></div>
-                        <div><a href="index.php?di=<?= "$value->id_manifestation";?>"><?= "s'inscrire";?></a></div>
+                        <div><a href="index.php?p=inscriptionManifestation&di=<?= "$value->id_manifestation";?>"><?= "s'inscrire";?></a></div>
                         <div><?= $value->court_manifestation; ?></div>
                         <div><?= $value->materiel_manifestation; ?></div>
                     </div>

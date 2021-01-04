@@ -58,4 +58,29 @@ class TableManifestation
             "materiel"=>$materiel
         ]);
     }
+
+    public static function addInscrit($id_manifestation, $count){
+        $db = new Database('reservationTennis');
+        $count ++;
+        $db->insert(
+            "UPDATE manifestation 
+                      SET 
+                        nbre_inscrit = :nbre_inscrit
+                      WHERE 
+                        id_manifestation = :id_manifestation
+            ",
+        [
+            "nbre_inscrit"=>$count,
+            "id_manifestation"=>$id_manifestation
+        ]
+        );
+    }
+
+    public static function getOne($id){
+        $db = new Database('reservationTennis');
+        $data = $db->query(
+            "SELECT * FROM manifestation WHERE id_manifestation = " . $id,
+            'App\Table\TableManifestation', true);
+        return $data;
+    }
 }

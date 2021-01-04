@@ -48,6 +48,9 @@ if($p === 'accueilNonAdherents'){
 }elseif($p === 'conEntraineur'){
     $app->setTitlePage('Entraineur connexion');
     require ROOT . '/page/entraineurs/connexion.php';
+}elseif($p === "inscriptionManifestation"){
+    $app->setTitlePage('none');
+    require ROOT . '/page/inscrmanifestation.php';
 }
 
 if($action === 'inscription'){
