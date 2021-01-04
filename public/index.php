@@ -51,6 +51,9 @@ if($p === 'accueilNonAdherents'){
 }elseif($p === "inscriptionManifestation"){
     $app->setTitlePage('none');
     require ROOT . '/page/inscrmanifestation.php';
+}elseif($p === "conAdmin"){
+    $app->setTitlePage('Page administration');
+    require ROOT . '/page/admin/connexion.php';
 }
 
 if($action === 'inscription'){

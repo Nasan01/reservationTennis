@@ -1,20 +1,20 @@
 <?php
-    if(isset($_POST['connexion'])){
-        $inEntraineur = \App\Table\TableEntraineur::findEntraineur($_POST['login'], $_POST['mdp']);
-        if($inEntraineur){
-            $_SESSION['id_e'] = $inEntraineur->id_entraineur;
-            $_SESSION['login_e'] = $inEntraineur->login_entraineur;
-            $_SESSION['mdp_e'] = $inEntraineur->mdp_entraineur;
-            header('Location: entraineur.php');
-        }else{
-            $error = true;
-        }
+if(isset($_POST['connexion'])){
+    $inAdmin = \App\Table\TableAdmin::findAdmin($_POST['login'], $_POST['mdp']);
+    if($inAdmin){
+        $_SESSION['id_a'] = $inAdmin->id_admin;
+        $_SESSION['login_a'] = $inAdmin->login_admin;
+        $_SESSION['mdp_a'] = $inAdmin->mdp_admin;
+        header('Location: admin.php');
+    }else{
+        $error = true;
     }
+}
 ?>
 
 <div class="row container">
     <div class="col-md-9">
-        <h2>Connexion d'entraineur</h2>
+        <h2>Connexion d'administrateur</h2>
         <form action="" method="post" class="form-horizontal">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="login">Login:</label>

@@ -12,8 +12,10 @@
     <title><?= $app->getTitlePage();?></title>
     <style>
         header{
-            font-family: "Droid Sans Fallback";
-            background-color: #5bc0de;
+            font-family: aakar;
+            border: 1px solid #ff7272;
+            border-radius: 7px;
+            background: #2f141d;
             box-shadow:  rgba(0, 0, 0, 0.5) 0 0 50px 0;
             height: 66px;
             color: aliceblue;
@@ -21,9 +23,11 @@
         }
         footer{
             color: aliceblue;
+            border: 1px solid #ff7272;
+            border-radius: 7px;
             height: 60px;
             padding: 12px;
-            background: #272A02;
+            background: #683535;
             box-shadow:  rgba(0, 0, 0, 0.7) 0 0 50px 0;
         }
         #all{
@@ -34,7 +38,7 @@
 </head>
 <body>
     <div id="all" class="container-fluid">
-        <header class="row" id="test">
+        <header class="row">
             <h1>Centre de ... d'un club de tennis</h1>
         </header>
         <div class="row">

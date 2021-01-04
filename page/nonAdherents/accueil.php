@@ -46,5 +46,9 @@
             <h3>Only for entraineur</h3>
             <p> <a href="index.php?p=conEntraineur">Click if you are entraineur</a></p>
         </div>
+        <div class="row text-right">
+            <h3>Only for administrateur</h3>
+            <p> <a href="index.php?p=conAdmin">Click if you are an administrateur</a></p>
+        </div>
     </div>
 </div>

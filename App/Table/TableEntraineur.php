@@ -25,6 +25,30 @@ class TableEntraineur
         return $in;
     }
 
+    public static function getAllwithLimit($debut){
+        $db = new Database('reservationTennis');
+        $data = $db->query(
+            "SELECT * FROM entraineurs LIMIT " . $debut .", 10",
+            'App\Table\TableEntraineur'
+        );
+        return $data;
+    }
+
+    public function creerEntraineur($nom, $prenom, $login, $mdp){
+        $db = new Database('reservationTennis');
+        $db->insert("
+            INSERT INTO entraineurs (nom_entraineur, prenom_entraineur, login_entraineur, mdp_entraineur)
+            VALUES (:nom, :prenom, :login, :mdp)
+        ",
+            [
+                'nom'=>$nom,
+                'prenom'=>$prenom,
+                'login'=>$login,
+                'mdp'=>$mdp
+            ]
+        );
+    }
+
     public static function versConnexion(){
         header('Location: index.php?p=conEntraineur');
     }
