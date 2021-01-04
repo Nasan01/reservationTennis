@@ -40,6 +40,12 @@ if($p === 'connected'){
     $app->setTitlePage('modifierCourts');
     $id_test = intval($_GET['id_test']);
     require ROOT . '/page/entraineurs/modifierCourt.php';
+}elseif($p === 'manifestation'){
+    $app->setTitlePage('manifestation create');
+    require ROOT . '/page/entraineurs/manifestationCreate.php';
+}elseif($p === 'listmanifestation'){
+    $app->setTitlePage('list manifestation');
+    require ROOT . '/page/entraineurs/listmanifestation.php';
 }
 
 $content = ob_get_clean();
