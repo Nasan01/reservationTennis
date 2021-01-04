@@ -36,6 +36,10 @@ if($p === 'connected'){
 }elseif($p === 'pager'){
     $app->setTitlePage('manage court(s)');
     require ROOT . '/page/entraineurs/viewmanageCourt.php';
+}elseif($p === 'modifierCourt'){
+    $app->setTitlePage('modifierCourts');
+    $id_test = intval($_GET['id_test']);
+    require ROOT . '/page/entraineurs/modifierCourt.php';
 }
 
 $content = ob_get_clean();

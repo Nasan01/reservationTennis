@@ -67,7 +67,7 @@
                             <td><?= $test->nbr_14_16;?> court(s) libre(s)</td>
                             <td><?= $test->nbr_16_18;?> court(s) libre(s)</td>
                             <td><?= $test->nbr_18_20;?> court(s) libre(s)</td>
-                            <td><a href="entraineur.php?p=modifierCourt&id=<?= $test->id_test;?>">Modifier</a></td>
+                            <td><a href="entraineur.php?p=modifierCourt&id_test=<?= $test->id_test;?>">Modifier</a></td>
                         </tr>
                     <?php endforeach;?>
                 </table>
