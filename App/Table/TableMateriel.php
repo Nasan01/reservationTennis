@@ -58,4 +58,15 @@ class TableMateriel
         );
     }
 
+    public function deleteMateriel($id){
+        $db = new Database('reservationTennis');
+        $db->insert(
+            "DELETE FROM materiel 
+                      WHERE id_materiel = :id",
+            [
+                'id'=>$id
+            ]
+        );
+    }
+
 }

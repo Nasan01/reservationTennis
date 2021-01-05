@@ -46,6 +46,9 @@ if($p === 'connected'){
 }elseif($p === 'modifMateriel'){
     $app->setTitlePage('Modifier Materiel');
     require ROOT . '/page/admin/modifMateriel.php';
+}elseif($p === 'supprimerMateriel'){
+    $app->setTitlePage('none');
+    require ROOT . '/page/admin/deleteMateriel.php';
 }
 
 $content = ob_get_clean();
