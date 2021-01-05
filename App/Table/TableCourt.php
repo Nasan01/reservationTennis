@@ -19,4 +19,17 @@ class TableCourt
 
         return $data;
     }
+
+    public function addCourt($nom, $surface, $etat){
+        $db = new Database('reservationTennis');
+        $db->insert(
+            "INSERT INTO court(nom_court, surface_court, etat_court)
+                      VALUES (:nom, :surface, :etat)",
+            [
+                'nom'=>$nom,
+                'surface'=>$surface,
+                'etat'=>$etat
+            ]
+        );
+    }
 }

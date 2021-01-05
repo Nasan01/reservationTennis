@@ -52,6 +52,9 @@ if($p === 'connected'){
 }elseif($p === 'gestionCourts'){
     $app->setTitlePage('Gestionterrain');
     require ROOT . '/page/admin/gestionTerrain.php';
+}elseif($p === 'ajouterTerrain'){
+    $app->setTitlePage('ajouter un terrain');
+    require ROOT . '/page/admin/ajoutTerrain.php';
 }
 
 $content = ob_get_clean();
