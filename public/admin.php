@@ -55,6 +55,12 @@ if($p === 'connected'){
 }elseif($p === 'ajouterTerrain'){
     $app->setTitlePage('ajouter un terrain');
     require ROOT . '/page/admin/ajoutTerrain.php';
+}elseif($p === 'modifCourt'){
+    $app->setTitlePage('Modifier un terrain');
+    require ROOT . '/page/admin/modifTerrain.php';
+}elseif($p === 'supprimerCourt'){
+    $app->setTitlePage('none');
+    require ROOT . '/page/admin/deleteTerrain.php';
 }
 
 $content = ob_get_clean();

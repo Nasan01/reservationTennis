@@ -24,8 +24,8 @@
                     <td><?= $all->nom_court;?></td>
                     <td><?= $all->surface_court;?></td>
                     <td><?= $all->etat_court;?></td>
-                    <td><a href="admin.php?p=modifMateriel&id_c=<?= $all->id_court;?>">modifier</a></td>
-                    <td><a href="admin.php?p=supprimerMateriel&id_c=<?= $all->id_court;?>">Supprimer</a></td>
+                    <td><a href="admin.php?p=modifCourt&id_c=<?= $all->id_court;?>">modifier</a></td>
+                    <td><a href="admin.php?p=supprimerCourt&id_c=<?= $all->id_court;?>">Supprimer</a></td>
                 </tr>
             <?php endforeach;?>
         </table>
