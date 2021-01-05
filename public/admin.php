@@ -49,6 +49,9 @@ if($p === 'connected'){
 }elseif($p === 'supprimerMateriel'){
     $app->setTitlePage('none');
     require ROOT . '/page/admin/deleteMateriel.php';
+}elseif($p === 'gestionCourts'){
+    $app->setTitlePage('Gestionterrain');
+    require ROOT . '/page/admin/gestionTerrain.php';
 }
 
 $content = ob_get_clean();
