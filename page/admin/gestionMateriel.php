@@ -9,21 +9,20 @@
         </ul>
     </div>
     <div class="col-md-9">
-        <h1>Gestion des Entraineurs</h1>
-        <p>
-            <a href="admin.php?p=creerEntraineur">Créer Entraineurs</a>
-        </p>
+        <h2>Gestion des matériels</h2>
+        <p><a href="admin.php?p=ajouterMateriel">Ajouter des matériels</a></p>
+        <?php var_dump(\App\Table\TableMateriel::getAllMateriel());?>
         <table class="table" style="background: #ffd482; color: rgba(10,42,46,1)">
             <tr>
-                <td>Nom Entraineurs</td>
-                <td>Prenom Entraineurs</td>
+                <td>Type de Materiel</td>
+                <td>Quantité de matériel</td>
                 <td>modifier</td>
                 <td>supprimer</td>
             </tr>
-            <?php foreach (\App\Table\TableEntraineur::getAllwithLimit(0) as $all):?>
+            <?php foreach (\App\Table\TableMateriel::getAllMateriel() as $all):?>
                 <tr>
-                    <td><?= $all->nom_entraineur;?></td>
-                    <td><?= $all->prenom_entraineur;?></td>
+                    <td><?= $all->type_materiel;?></td>
+                    <td><?= $all->quantite_materiel;?></td>
                     <td><a href="admin.php?p=modifEntraineur&id_e=<?= $all->id_entraineur;?>">modifier</a></td>
                     <td><a href="admin.php?p=supprimerEntraineur&id_e=<?= $all->id_entraineur;?>">Supprimer</a></td>
                 </tr>

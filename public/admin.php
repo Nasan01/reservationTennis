@@ -37,6 +37,12 @@ if($p === 'connected'){
 }elseif($p === 'supprimerEntraineur'){
     $app->setTitlePage('none');
     require ROOT . '/page/admin/deleteEntraineur.php';
+}elseif($p === 'gestionMateriels'){
+    $app->setTitlePage('Gestion Matériels');
+    require ROOT . '/page/admin/gestionMateriel.php';
+}elseif($p === 'ajouterMateriel'){
+    $app->setTitlePage('ajout Materiel');
+    require ROOT . '/page/admin/ajoutMateriel.php';
 }
 
 $content = ob_get_clean();
