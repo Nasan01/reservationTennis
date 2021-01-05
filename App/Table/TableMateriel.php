@@ -20,4 +20,16 @@ class TableMateriel
         return $data;
     }
 
+    public function addMateriel($type, $quantite){
+        $db = new Database('reservationTennis');
+        $db->insert(
+            "INSERT INTO materiel(type_materiel, quantite_materiel)
+                      VALUES (:type, :quantite)",
+            [
+                'type'=>$type,
+                'quantite'=>intval($quantite)
+            ]
+        );
+    }
+
 }

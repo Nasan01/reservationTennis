@@ -11,7 +11,6 @@
     <div class="col-md-9">
         <h2>Gestion des matériels</h2>
         <p><a href="admin.php?p=ajouterMateriel">Ajouter des matériels</a></p>
-        <?php var_dump(\App\Table\TableMateriel::getAllMateriel());?>
         <table class="table" style="background: #ffd482; color: rgba(10,42,46,1)">
             <tr>
                 <td>Type de Materiel</td>
@@ -23,8 +22,8 @@
                 <tr>
                     <td><?= $all->type_materiel;?></td>
                     <td><?= $all->quantite_materiel;?></td>
-                    <td><a href="admin.php?p=modifEntraineur&id_e=<?= $all->id_entraineur;?>">modifier</a></td>
-                    <td><a href="admin.php?p=supprimerEntraineur&id_e=<?= $all->id_entraineur;?>">Supprimer</a></td>
+                    <td><a href="admin.php?p=modifMateriel&id_m=<?= $all->id_materiel;?>">modifier</a></td>
+                    <td><a href="admin.php?p=supprimerMateriel&id_m=<?= $all->id_materiel;?>">Supprimer</a></td>
                 </tr>
             <?php endforeach;?>
         </table>
