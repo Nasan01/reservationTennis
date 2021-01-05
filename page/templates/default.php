@@ -37,6 +37,9 @@
             background: url("../public/images/tennis 2.jpeg");
             color: antiquewhite;
         }
+        table{
+            background: #ffd482; color: rgba(10,42,46,1);
+        }
     </style>
 </head>
 <body>
