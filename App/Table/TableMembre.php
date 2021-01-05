@@ -88,6 +88,25 @@ class TableMembre
         );
     }
 
+    public static function getAllMembre(){
+        $db = new Database('reservationTennis');
+        $data = $db->query(
+            "SELECT * FROM membres",
+            'App\Table\TableMembre'
+        );
+        return $data;
+    }
+
+    public function deleteMembre($id){
+        $db = new Database('reservationTennis');
+        $db->insert(
+            "DELETE FROM membres WHERE id_membre = :id",
+            [
+                "id"=>$id
+            ]
+        );
+    }
+
     public function is_connected(){
 
         return (isset($_SESSION['login_m']) && isset($_SESSION['mdp_m']));

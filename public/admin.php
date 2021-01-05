@@ -61,6 +61,12 @@ if($p === 'connected'){
 }elseif($p === 'supprimerCourt'){
     $app->setTitlePage('none');
     require ROOT . '/page/admin/deleteTerrain.php';
+}elseif($p === 'gestionMembers'){
+    $app->setTitlePage('gestion Membres');
+    require ROOT . '/page/admin/gestionMember.php';
+}elseif($p === 'supprimerMembre'){
+    $app->setTitlePage('none');
+    require ROOT . '/page/admin/deleteMembre.php';
 }
 
 $content = ob_get_clean();
