@@ -43,6 +43,9 @@ if($p === 'connected'){
 }elseif($p === 'ajouterMateriel'){
     $app->setTitlePage('ajout Materiel');
     require ROOT . '/page/admin/ajoutMateriel.php';
+}elseif($p === 'modifMateriel'){
+    $app->setTitlePage('Modifier Materiel');
+    require ROOT . '/page/admin/modifMateriel.php';
 }
 
 $content = ob_get_clean();
