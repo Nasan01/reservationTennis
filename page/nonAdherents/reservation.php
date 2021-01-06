@@ -28,10 +28,14 @@
 
             <div class="test">
                 <?php
+                    $isaTest = \App\Table\TableReservation::countReservation();
+                    $isaTest = (int) $isaTest;
                     if (isset($_GET['debut'])){
                         $debut = (int) $_GET['debut'];
                         if($debut < 0){
                             $debut = 0;
+                        }elseif($debut > $isaTest){
+                            $debut = $isaTest;
                         }
                     }else{
                         $debut = 0;

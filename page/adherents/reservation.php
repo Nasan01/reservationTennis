@@ -3,11 +3,11 @@
         <div class="row">
             <h2>Menu</h2>
             <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="<?= 'index.php?p=reservationNonAdherents'?>">Réservation</a></li>
-                <li><a href="index.php?p=manifestation">Manifestation</a></li>
-                <li><a href="index.php?p=inscription">S'inscrire (Nouvel utilisateur)</a></li>
-                <li><a href="index.php?p=connexion">Connexion</a></li>
+                <li><a href="membre.php">Accueil</a></li>
+                <li><a href="membre.php?p=reservation">Reservations</a></li>
+                <li><a href="membre.php?p=manifestation">Manifestations</a></li>
+                <li><a href="membre.php?p=profil">Mon Profil</a></li>
+                <li><a href="membre.php?p=deconnexion">Deconnexion</a></li>
             </ul>
         </div>
     </div>

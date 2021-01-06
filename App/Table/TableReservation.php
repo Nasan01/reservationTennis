@@ -29,12 +29,19 @@ class TableReservation
         return $data;
     }
 
-    public static function getTest($debut, $fin){
+    public static function getTest($debut, $fin, $date = null){
         $db = new Database('reservationTennis');
-        $data = $db->query(
-            "SELECT * FROM test LIMIT ".$debut.", ".$fin,
-            "App\Table\TableReservation"
-        );
+        if($date == null){
+            $data = $db->query(
+                "SELECT * FROM test LIMIT ".$debut.", ".$fin,
+                "App\Table\TableReservation"
+            );
+        }else{
+            $data = $db->query(
+                "SELECT * FROM test WHERE date = ".$date,
+                "App\Table\TableReservation"
+            );
+        }
         return $data;
     }
 
@@ -90,6 +97,15 @@ class TableReservation
                 "id_test"=>$id_test
             ]
         );
+    }
+
+    public static function countReservation(){
+        $db = new Database('reservationTennis');
+        $data = $db->query("
+        SELECT count(*) FROM test",
+            'App\Table\TableReservation'
+        );
+        return $data;
     }
 
 }
