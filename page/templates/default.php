@@ -11,6 +11,10 @@
     <script src="../public/js/bootstrap.min.js"></script>
     <title><?= $app->getTitlePage();?></title>
     <style>
+        body {
+            font-family: "Lato", sans-serif;
+            transition: background-color .5s;
+        }
         header{
             font-family: aakar;
             border: 1px solid #ff7272;
@@ -34,25 +38,126 @@
             color: #23b7bb;
         }
         #all{
-            background: url("../public/images/tennis 2.jpeg");
+            background: url("../public/images/tennis 2.jpeg") fixed;
             color: antiquewhite;
         }
         table{
             background: #ffd482; color: rgba(10,42,46,1);
         }
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #4c332d;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+        }
+
     </style>
 </head>
 <body>
     <div id="all" class="container-fluid">
+        <?php
+            if(isset($_SESSION['id_m'])){
+        ?>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul>
+                <li><a href="membre.php">Accueil</a></li>
+                <li><a href="membre.php?p=reservation">Reservations</a></li>
+                <li><a href="membre.php?p=manifestation">Manifestations</a></li>
+                <li><a href="membre.php?p=profil">Mon Profil</a></li>
+                <li><a href="membre.php?p=deconnexion">Deconnexion</a></li>
+            </ul>
+        </div>
+        <?php } elseif(isset($_SESSION['id_e'])) {?>
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <ul>
+                        <li><a href="entraineur.php">Planing</a></li>
+                        <li><a href="entraineur.php?p=court">Gérer les courts</a></li>
+                        <li><a href="entraineur.php?p=manifestation">Créer des manifestations</a></li>
+                        <li><a href="index.php?p=cours">Gérer les cours</a></li>
+                        <li><a href="entraineur.php?p=deconnexion">Deconnexion</a></li>
+                    </ul>
+                </div>
+        <?php } elseif (isset($_SESSION['id_a'])){?>
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <ul>
+                        <li><a href="admin.php">Accueil</a></li>
+                        <li><a href="admin.php?p=gestionEntraineurs">All entraineurs</a></li>
+                        <li><a href="admin.php?p=gestionMembers">All members</a></li>
+                        <li><a href="admin.php?p=gestionCourts">All courts</a></li>
+                        <li><a href="admin.php?p=gestionMateriels">All matériels</a></li>
+                        <li><a href="admin.php?p=deconnexion">Deconnexion</a></li>
+                    </ul>
+                </div>
+        <?php } else { ?>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="<?= 'index.php?p=reservationNonAdherents'?>">Réservation</a></li>
+                <li><a href="index.php?p=manifestation">Manifestation</a></li>
+                <li><a href="index.php?p=inscription">S'inscrire (Nouvel utilisateur)</a></li>
+                <li><a href="index.php?p=connexion">Connexion</a></li>
+            </ul>
+        </div>
+        <?php } ?>
         <header class="row">
             <h1>Centre de ... d'un club de tennis</h1>
         </header>
-        <div class="row">
+        <div class="row" id="main">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; MENU</span>
             <?= $content;?>
         </div>
         <footer class="row">
             <p class="text-center">Big thanks for the author</p>
         </footer>
     </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
 </body>
 </html>

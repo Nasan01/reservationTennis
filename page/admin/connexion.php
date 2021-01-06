@@ -13,7 +13,7 @@ if(isset($_POST['connexion'])){
 ?>
 
 <div class="row container">
-    <div class="col-md-9">
+    <div class="col-md-8 col-md-offset-2">
         <h2>Connexion d'administrateur</h2>
         <form action="" method="post" class="form-horizontal">
             <div class="form-group">

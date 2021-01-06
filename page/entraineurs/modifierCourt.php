@@ -21,19 +21,7 @@ if(isset($_POST['modifier'])){
 }
 ?>
 <div class="row container">
-    <div class="col-md-3">
-        <div class="row">
-            <h2>Menu</h2>
-            <ul>
-                <li><a href="entraineur.php">Planing</a></li>
-                <li><a href="entraineur.php?p=court">Gérer les courts</a></li>
-                <li><a href="entraineur.php?p=manifestation">Créer des manifestations</a></li>
-                <li><a href="index.php?p=cours">Gérer les cours</a></li>
-                <li><a href="entraineur.php?p=deconnexion">Deconnexion</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="col-md-9">
+    <div class="col-md-8 col-md-offset-2">
         <h2>Ajouter des courts disponibles</h2>
         <form action="" method="post" class="form-horizontal">
             <div class="form-group">

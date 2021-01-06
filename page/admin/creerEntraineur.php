@@ -11,16 +11,7 @@
     }
 ?>
 <div class="row container">
-    <div class="col-md-3">
-        <ul>
-            <li><a href="admin.php">Accueil</a></li>
-            <li><a href="admin.php?p=gestionEntraineurs">All entraineurs</a></li>
-            <li><a href="admin.php?p=gestionMembers">All members</a></li>
-            <li><a href="admin.php?p=gestionCourts">All courts</a></li>
-            <li><a href="admin.php?p=gestionMateriel">All matériels</a></li>
-        </ul>
-    </div>
-    <div class="col-md-9">
+    <div class="col-md-8 col-md-offset-2">
         <h2>Créer un entraineurs</h2>
         <form action="" method="post" class="form-horizontal">
             <div class="form-group">

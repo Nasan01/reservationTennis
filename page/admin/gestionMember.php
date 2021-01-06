@@ -1,14 +1,5 @@
 <div class="row container">
-    <div class="col-md-3">
-        <ul>
-            <li><a href="admin.php">Accueil</a></li>
-            <li><a href="admin.php?p=gestionEntraineurs">All entraineurs</a></li>
-            <li><a href="admin.php?p=gestionMembers">All members</a></li>
-            <li><a href="admin.php?p=gestionCourts">All courts</a></li>
-            <li><a href="admin.php?p=gestionMateriels">All matériels</a></li>
-        </ul>
-    </div>
-    <div class="col-md-9">
+    <div class="col-md-8 col-md-offset-2">
         <h2>Gérer les membres</h2>
         <table class="table" style="background: #ffd482; color: rgba(10,42,46,1)">
             <tr>

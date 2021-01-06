@@ -67,6 +67,8 @@ if($p === 'connected'){
 }elseif($p === 'supprimerMembre'){
     $app->setTitlePage('none');
     require ROOT . '/page/admin/deleteMembre.php';
+}elseif($p === 'deconnexion'){
+    require ROOT . '/page/admin/deconnexion.php';
 }
 
 $content = ob_get_clean();
