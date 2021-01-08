@@ -21,19 +21,7 @@ if(isset($_POST['modifier'])){
 ?>
 <div class="row container">
     <div class="row">
-        <div class="col-md-3">
-            <div class="row">
-                <h2>Menu</h2>
-                <ul>
-                    <li><a href="membre.php">Accueil</a></li>
-                    <li><a href="membre.php?p=reservation">Reservations</a></li>
-                    <li><a href="membre.php?p=manifestation">Manifestations</a></li>
-                    <li><a href="membre.php?p=profil">Mon Profil</a></li>
-                    <li><a href="membre.php?p=deconnexion">Deconnexion</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-9">
+        <div class="col-md-8 col-md-offset-3">
             <h2>Modifier my profil</h2>
             <form action="" method="post" class="form-horizontal">
                 <div class="form-group">

@@ -10,7 +10,7 @@
         <div class="row container-fluid">
             <div>
                 <h3>Informations de l'agence</h3>
-                <table>
+                <table style="background: none; color: rgba(205,239,78,0.84)">
                     <tr>
                         <td>coordonnées: </td>
                         <td>Madagascar(Supposition)</td>

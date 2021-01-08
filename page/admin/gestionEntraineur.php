@@ -6,10 +6,10 @@
         </p>
         <table class="table" style="background: #ffd482; color: rgba(10,42,46,1)">
             <tr>
-                <td>Nom Entraineurs</td>
-                <td>Prenom Entraineurs</td>
-                <td>modifier</td>
-                <td>supprimer</td>
+                <th>Nom Entraineurs</th>
+                <th>Prenom Entraineurs</th>
+                <th>modifier</th>
+                <th>supprimer</th>
             </tr>
             <?php foreach (\App\Table\TableEntraineur::getAllwithLimit(0) as $all):?>
                 <tr>

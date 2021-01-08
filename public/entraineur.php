@@ -45,7 +45,7 @@ if($p === 'connected'){
     require ROOT . '/page/entraineurs/manifestationCreate.php';
 }elseif($p === 'listmanifestation'){
     $app->setTitlePage('list manifestation');
-    require ROOT . '/page/entraineurs/listmanifestation.php';
+    require ROOT . '/page/manifestation.php';
 }
 
 $content = ob_get_clean();

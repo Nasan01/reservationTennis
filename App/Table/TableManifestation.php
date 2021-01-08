@@ -10,11 +10,20 @@ class TableManifestation
 {
     protected $table = 'manifestation';
 
-    public static function getManifestation($nombre, $count){
+    public static function getManifestation($nombre, $count, $type){
         $db = new Database('reservationTennis');
         $data = $db->query(
-            "SELECT * FROM manifestation LIMIT ".$nombre.", ".$count." ",
+            "SELECT * FROM manifestation WHERE type_manifestation = '". $type ."' LIMIT ".$nombre.", ".$count." ",
             'App\Table\TableManifestation');
+        return $data;
+    }
+
+    public static function getCountManifestation(){
+        $db = new Database('reservationTennis');
+        $data = $db->query(
+            "SELECT count(*) FROM manifestation",
+            'App\Table\TableManifestation');
+        $data = (int) $data;
         return $data;
     }
 
@@ -82,5 +91,23 @@ class TableManifestation
             "SELECT * FROM manifestation WHERE id_manifestation = " . $id,
             'App\Table\TableManifestation', true);
         return $data;
+    }
+
+    public static function getAllManif(){
+        $db = new Database('reservationTennis');
+        $data = $db->query(
+            "SELECT * FROM manifestation",
+            'App\Table\TableManifestation');
+        return $data;
+    }
+
+    public function deleteManifestation($id){
+        $db = new Database('reservationTennis');
+        $db->insert(
+            "DELETE FROM manifestation WHERE id_manifestation = ?",
+            [
+                $id
+            ]
+        );
     }
 }

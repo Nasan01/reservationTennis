@@ -35,7 +35,7 @@ if($p === "accueil"){
 }elseif($p === 'reservation'){
     $app->setTitlePage('reservation');
     require ROOT . '/page/adherents/reservation.php';
-}elseif ($p === 'manifestaion'){
+}elseif ($p === 'manifestation'){
     $app->setTitlePage('manifestation');
     require ROOT . '/page/manifestation.php';
 }

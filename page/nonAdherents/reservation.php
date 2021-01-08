@@ -31,18 +31,20 @@
                     }
                 ?>
                 <div class="pager">
-                    <a href="index.php?p=pager&debut=<?= $debut-7?>">semaine precedent</a>
-                    <a href="index.php?p=pager&debut=<?= $debut+7?>">semaine suivant</a>
+                    <ul>
+                        <li><a href="index.php?p=pager&debut=<?= $debut-7?>">semaine precedent</a></li>
+                        <li><a href="index.php?p=pager&debut=<?= $debut+7?>">semaine suivant</a></li>
+                    </ul>
                 </div>
                 <table class="table" border="1">
                     <tr>
-                        <td>jour/heure</td>
-                        <td>8h-10h</td>
-                        <td>10h-12h</td>
-                        <td>12h-14h</td>
-                        <td>14h-16h</td>
-                        <td>16h-18h</td>
-                        <td>18h-20h</td>
+                        <th>jour/heure</th>
+                        <th>8h-10h</th>
+                        <th>10h-12h</th>
+                        <th>12h-14h</th>
+                        <th>14h-16h</th>
+                        <th>16h-18h</th>
+                        <th>18h-20h</th>
                     </tr>
                     <?php   foreach (\App\Table\TableReservation::getTest($debut, 7) as $test): ?>
                         <tr>

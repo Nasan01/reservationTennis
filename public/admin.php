@@ -69,6 +69,12 @@ if($p === 'connected'){
     require ROOT . '/page/admin/deleteMembre.php';
 }elseif($p === 'deconnexion'){
     require ROOT . '/page/admin/deconnexion.php';
+}elseif($p === 'gestionManifestations'){
+    $app->setTitlePage('manifestation gestion');
+    require ROOT . '/page/admin/gestionManifestation.php';
+}elseif($p === 'deleteManifestation'){
+    $app->setTitlePage('none');
+    require ROOT . '/page/admin/deleteManifestation.php';
 }
 
 $content = ob_get_clean();

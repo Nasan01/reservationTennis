@@ -7,7 +7,9 @@
 
 #myparent div{
     border: 1px solid #000000;
-    background-color: peru;
+    text-align: center;
+    margin: 27px;
+    padding: 37px;
 }
 
 #footer{

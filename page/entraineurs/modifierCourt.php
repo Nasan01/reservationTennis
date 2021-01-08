@@ -1,6 +1,5 @@
 <?php
     $allById = \App\Table\TableReservation::getTestbyId($id_test);
-    var_dump($allById);
 ?>
 <?php
 if(isset($_POST['modifier'])){

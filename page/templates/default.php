@@ -24,6 +24,7 @@
             height: 66px;
             color: aliceblue;
             text-align: center;
+            position: relative;
         }
         footer{
             color: aliceblue;
@@ -33,6 +34,7 @@
             padding: 12px;
             background: #683535;
             box-shadow:  rgba(0, 0, 0, 0.7) 0 0 50px 0;
+            position: relative;
         }
         a{
             color: #23b7bb;
@@ -82,6 +84,13 @@
             padding: 16px;
         }
 
+        #myparent div{
+            border: 1px solid #000000;
+            text-align: center;
+            padding: 7px;
+        }
+
+
         @media screen and (max-height: 450px) {
             .sidenav {padding-top: 15px;}
             .sidenav a {font-size: 18px;}
@@ -124,6 +133,7 @@
                         <li><a href="admin.php?p=gestionMembers">All members</a></li>
                         <li><a href="admin.php?p=gestionCourts">All courts</a></li>
                         <li><a href="admin.php?p=gestionMateriels">All matériels</a></li>
+                        <li><a href="admin.php?p=gestionManifestations">All manifestation</a></li>
                         <li><a href="admin.php?p=deconnexion">Deconnexion</a></li>
                     </ul>
                 </div>
@@ -140,7 +150,7 @@
         </div>
         <?php } ?>
         <header class="row">
-            <h1>Centre de ... d'un club de tennis</h1>
+            <h1>Centre de gestion d'un centre de tennis</h1>
         </header>
         <div class="row" id="main">
             <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; MENU</span>

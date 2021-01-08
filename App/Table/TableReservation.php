@@ -105,6 +105,7 @@ class TableReservation
         SELECT count(*) FROM test",
             'App\Table\TableReservation'
         );
+        $data = (int) $data;
         return $data;
     }
 
