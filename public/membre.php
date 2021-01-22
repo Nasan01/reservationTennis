@@ -34,10 +34,16 @@ if($p === "accueil"){
     require ROOT . '/page/adherents/deconnexion.php';
 }elseif($p === 'reservation'){
     $app->setTitlePage('reservation');
-    require ROOT . '/page/adherents/reservation.php';
+    require ROOT . '/page/nonAdherents/reservation.php';
 }elseif ($p === 'manifestation'){
     $app->setTitlePage('manifestation');
     require ROOT . '/page/manifestation.php';
+}elseif($p === 'cours'){
+    $app->setTitlePage('Cours');
+    require ROOT . '/page/adherents/cours.php';
+}elseif($p === 'pager'){
+    $app->setTitlePage('Cours');
+    require ROOT . '/page/adherents/cours.php';
 }
 
 

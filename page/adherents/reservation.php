@@ -1,14 +1,3 @@
 <div class="row container">
-    <div class="col-md-3">
-        <div class="row">
-            <h2>Menu</h2>
-            <ul>
-                <li><a href="membre.php">Accueil</a></li>
-                <li><a href="membre.php?p=reservation">Reservations</a></li>
-                <li><a href="membre.php?p=manifestation">Manifestations</a></li>
-                <li><a href="membre.php?p=profil">Mon Profil</a></li>
-                <li><a href="membre.php?p=deconnexion">Deconnexion</a></li>
-            </ul>
-        </div>
-    </div>
+    <h1 style="color: rgba(239,39,31,0.84);">Je suis sur le point de creer cette page</h1>
 </div>

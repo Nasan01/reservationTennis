@@ -109,6 +109,7 @@
                 <li><a href="membre.php">Accueil</a></li>
                 <li><a href="membre.php?p=reservation">Reservations</a></li>
                 <li><a href="membre.php?p=manifestation">Manifestations</a></li>
+                <li><a href="membre.php?p=cours">Cours</a></li>
                 <li><a href="membre.php?p=profil">Mon Profil</a></li>
                 <li><a href="membre.php?p=deconnexion">Deconnexion</a></li>
             </ul>
