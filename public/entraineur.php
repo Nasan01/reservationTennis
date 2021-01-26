@@ -46,6 +46,15 @@ if($p === 'connected'){
 }elseif($p === 'listmanifestation'){
     $app->setTitlePage('list manifestation');
     require ROOT . '/page/manifestation.php';
+}elseif($p === 'cours'){
+    $app->setTitlePage('cours');
+    require ROOT . '/page/entraineurs/listCours.php';
+}elseif($p === 'ajoutCours'){
+    $app->setTitlePage('Ajouter des cours');
+    require ROOT . '/page/entraineurs/ajoutCours.php';
+}elseif($p === 'modifierCours'){
+    $app->setTitlePage('modifier cours');
+    require ROOT . '/page/entraineurs/modifCours.php';
 }
 
 $content = ob_get_clean();

@@ -121,7 +121,7 @@
                         <li><a href="entraineur.php">Planing</a></li>
                         <li><a href="entraineur.php?p=court">Gérer les courts</a></li>
                         <li><a href="entraineur.php?p=manifestation">Créer des manifestations</a></li>
-                        <li><a href="index.php?p=cours">Gérer les cours</a></li>
+                        <li><a href="entraineur.php?p=cours">Gérer les cours</a></li>
                         <li><a href="entraineur.php?p=deconnexion">Deconnexion</a></li>
                     </ul>
                 </div>

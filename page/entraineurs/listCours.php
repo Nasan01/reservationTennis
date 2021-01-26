@@ -1,7 +1,9 @@
+<?php ?>
+
 <div class="row container">
     <div class="col-md-8 col-md-offset-2">
         <ul>
-            <li><a href="entraineur.php?p=ajoutCourt">Ajouter des courts disponible à une date</a></li>
+            <li><a href="entraineur.php?p=ajoutCours">Ajouter des Cours</a></li>
         </ul>
         <div class="row">
             <?php
@@ -17,7 +19,7 @@
             ?>
             <div class="test">
                 <?php
-                $isaTest = \App\Table\TableReservation::countReservation();
+                $isaTest = \App\Table\TableCours::countCours();
                 $isaTest = (int) $isaTest;
                 if (isset($_GET['debut'])){
                     $debut = (int) $_GET['debut'];
@@ -31,8 +33,10 @@
                 }
                 ?>
                 <div class="pager">
-                    <a href="entraineur.php?p=pager&debut=<?= $debut-7?>">semaine precedent</a>
-                    <a href="entraineur.php?p=pager&debut=<?= $debut+7?>">semaine suivant</a>
+                    <ul>
+                        <li><a href="entraineur.php?p=pager&debut=<?= $debut-7?>">semaine precedent</a></li>
+                        <li><a href="entraineur.php?p=pager&debut=<?= $debut+7?>">semaine suivant</a></li>
+                    </ul>
                 </div>
                 <table class="table" border="1">
                     <tr>
@@ -44,22 +48,16 @@
                         <td>16h-18h</td>
                         <td>18h-20h</td>
                     </tr>
-                    <?php   foreach (\App\Table\TableReservation::getTest($debut, 7) as $test): ?>
+                    <?php   foreach (\App\Table\TableCours::getCours($debut, 7) as $test): ?>
                         <tr>
-                            <td><?= convertDate($test->date);?></td>
-                            <td><?php
-                                if($test->nbr_8_10 == 10){
-                                    echo "vous avez reservez";
-                                }else{
-                                    echo $test->nbr_8_10;
-                                }
-                                ?> court(s) libre(s)</td>
-                            <td><?= $test->nbr_10_12;?> court(s) libre(s)</td>
-                            <td><?= $test->nbr_12_14;?> court(s) libre(s)</td>
-                            <td><?= $test->nbr_14_16;?> court(s) libre(s)</td>
-                            <td><?= $test->nbr_16_18;?> court(s) libre(s)</td>
-                            <td><?= $test->nbr_18_20;?> court(s) libre(s)</td>
-                            <td><a href="entraineur.php?p=modifierCourt&id_test=<?= $test->id_test;?>">Modifier</a></td>
+                            <td><?= convertDate($test->date_cours);?></td>
+                            <td><?php echo $test->nomCours_8_10; ?></td>
+                            <td><?= $test->nomCours_10_12;?></td>
+                            <td><?= $test->nomCours_12_14;?></td>
+                            <td><?= $test->nomCours_14_16;?></td>
+                            <td><?= $test->nomCours_16_18;?></td>
+                            <td><?= $test->nomCours_18_20;?></td>
+                            <td><a href="entraineur.php?p=modifierCours&id_cours=<?= $test->id_cours;?>">Modifier</a></td>
                         </tr>
                     <?php endforeach;?>
                 </table>
