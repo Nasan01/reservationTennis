@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mar. 05 jan. 2021 à 15:04
+-- Généré le : mer. 03 fév. 2021 à 11:02
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.4.10
 
@@ -48,12 +48,12 @@ INSERT INTO `admin` (`id_admin`, `login_admin`, `mdp_admin`) VALUES
 
 CREATE TABLE `cours` (
   `id_cours` int(11) NOT NULL,
-  `nomCours_8_10` varchar(25) DEFAULT NULL,
-  `nomCours_10_12` varchar(25) DEFAULT NULL,
-  `nomCours_12_14` varchar(25) DEFAULT NULL,
-  `nomCours_14_16` varchar(25) DEFAULT NULL,
-  `nomCours_16_18` varchar(25) DEFAULT NULL,
-  `nomCours_18_20` varchar(25) DEFAULT NULL,
+  `nomCours_8_10` varchar(25) DEFAULT ' ',
+  `nomCours_10_12` varchar(25) DEFAULT '  ',
+  `nomCours_12_14` varchar(25) DEFAULT '  ',
+  `nomCours_14_16` varchar(25) DEFAULT '  ',
+  `nomCours_16_18` varchar(25) DEFAULT '  ',
+  `nomCours_18_20` varchar(25) DEFAULT ' ',
   `date_cours` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -62,7 +62,8 @@ CREATE TABLE `cours` (
 --
 
 INSERT INTO `cours` (`id_cours`, `nomCours_8_10`, `nomCours_10_12`, `nomCours_12_14`, `nomCours_14_16`, `nomCours_16_18`, `nomCours_18_20`, `date_cours`) VALUES
-(1, 'cours pour debutant', NULL, 'tennis appliquer', NULL, NULL, 'tennis theorie', '2020-12-14');
+(1, 'cours pour debutant', 'tennis linux', 'tennis appliquer', ' ', 'java tennis', 'tennis theorie', '2020-12-14'),
+(2, 'Philosophie tennis', ' ', 'math tennis', ' tennis php', ' ', 'Informatique Tennis', '2020-12-15');
 
 -- --------------------------------------------------------
 
@@ -132,7 +133,8 @@ CREATE TABLE `entraineurs` (
 INSERT INTO `entraineurs` (`id_entraineur`, `nom_entraineur`, `prenom_entraineur`, `login_entraineur`, `mdp_entraineur`) VALUES
 (1, 'Nasan', 'Avo', 'entraineur', 'e377a95a64a59b751511c444be9757e36a1e8ee0'),
 (2, 'rakoto', 'soa soa', 'rakoto', '454875b48e096aa6a73b678802af3e6379e781dc'),
-(4, 'jean', 'kely', 'jean', '51f8b1fa9b424745378826727452997ee2a7c3d7');
+(4, 'jean', 'kely', 'jean', '51f8b1fa9b424745378826727452997ee2a7c3d7'),
+(5, 'test', 'test', 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3');
 
 -- --------------------------------------------------------
 
@@ -161,8 +163,8 @@ CREATE TABLE `manifestation` (
 --
 
 INSERT INTO `manifestation` (`id_manifestation`, `titre_manifestation`, `type_manifestation`, `horaire_manifestation`, `organisateur_manifestation`, `tranche_age_manifestation`, `niveau_req_manifestation`, `effectif_manifestation`, `animateur_manifestation`, `nbre_inscrit`, `court_manifestation`, `materiel_manifestation`, `inscrit_id`) VALUES
-(1, 'stage pour debutant', 'stage', '10/06 8:00 à 10/06 16:00', 'Rakoto soa', '6-14', 'debutant', '6-40', 'Mon cul', 7, 'indoor', 'raquette 4 et balle 45', 1),
-(2, 'stage pour les mini débutants', 'stage', '12h - 16h le 17 Janvier 2020', 'mr le test', '10-20', 'noob', '6-40', 'mr le animateur', 0, 'outdoor', 'raquette 10 - balle 100', 0);
+(2, 'stage pour les mini débutants', 'stage', '12h - 16h le 17 Janvier 2020', 'mr le test', '10-20', 'noob', '6-40', 'mr le animateur', 1, 'outdoor', 'raquette 10 - balle 100', 0),
+(3, 'un petit tournoi pour tous le monde', 'tournoi', '12h - 18h le 20 janvier', 'Mr me', '10-25', 'all ', '40', 'Mr le animateur', 0, 'central', 'raquette 6 - balle 50', 0);
 
 -- --------------------------------------------------------
 
@@ -212,7 +214,7 @@ CREATE TABLE `membres` (
 INSERT INTO `membres` (`id_membre`, `nom_membre`, `prenom_membre`, `rue_membre`, `codePostal_membre`, `ville_membre`, `dateNaiss_membre`, `tel_membre`, `numFFT_membre`, `login_membre`, `mdp_membre`) VALUES
 (1, 'Avo', 'Ram', '24 malaza', '234postalcode', 'Antananarivo', '2003-01-20', 340133099, 1, 'avo', 'c6252b4121d43ed6403081c08832c46f28074789'),
 (5, 'Tsiory', 'Soa', 'Tana', '34te', 'Betongole', '2020-12-01', 87345435, 34355, 'tsiory', '1e3e84f0a3bfea349a18ff6e2dccfb3866b9d11f'),
-(6, 'Tsy putin', 'de merde', 'pute', 'masosotay', 'fuck', '2001-01-01', 1234124, 123, 'putin', '89749fe500cbbaba80324cab455e597c0ccbdf0a'),
+(6, 'Tsy putin', 'de merde', 'pute', 'tsy masosotay', 'fuck', '2001-01-01', 1234124, 123, 'putin', '89749fe500cbbaba80324cab455e597c0ccbdf0a'),
 (7, 'encore', 'putin', 'de', '34', 'merde', '2020-12-22', 3263656, 324, 'encore', 'af580f7aa20f8bffc32174fd64e3db5031e5aeb6'),
 (8, 'test', 'test', 'test', 'test', 'test', '2020-12-22', 235345, 235366, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3');
 
@@ -274,7 +276,7 @@ INSERT INTO `test` (`id_test`, `date`, `nbr_8_10`, `nbr_10_12`, `nbr_12_14`, `nb
 (12, '2020-12-25', 0, 0, 0, 0, 0, 0),
 (13, '2020-12-26', 3, 1, 1, 1, 2, 0),
 (14, '2020-12-27', 3, 0, 0, 1, 3, 2),
-(15, '2020-12-28', 1, 2, 2, 3, 1, 2);
+(15, '2020-12-28', 1, 0, 2, 3, 1, 2);
 
 --
 -- Index pour les tables déchargées
@@ -355,7 +357,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT pour la table `cours`
 --
 ALTER TABLE `cours`
-  MODIFY `id_cours` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_cours` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `court`
@@ -367,13 +369,13 @@ ALTER TABLE `court`
 -- AUTO_INCREMENT pour la table `entraineurs`
 --
 ALTER TABLE `entraineurs`
-  MODIFY `id_entraineur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_entraineur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `manifestation`
 --
 ALTER TABLE `manifestation`
-  MODIFY `id_manifestation` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_manifestation` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `materiel`

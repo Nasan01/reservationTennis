@@ -17,9 +17,9 @@
         }
         header{
             font-family: aakar;
-            border: 1px solid #ff7272;
-            border-radius: 7px;
-            background: #2f141d;
+            border: 1px solid #171515;
+            border-radius: 12px;
+            background: #d29c65;
             box-shadow:  rgba(0, 0, 0, 0.5) 0 0 50px 0;
             height: 66px;
             color: aliceblue;
@@ -28,11 +28,11 @@
         }
         footer{
             color: aliceblue;
-            border: 1px solid #ff7272;
+            border: 1px solid #504242;
             border-radius: 7px;
             height: 60px;
             padding: 12px;
-            background: #683535;
+            background: #665228;
             box-shadow:  rgba(0, 0, 0, 0.7) 0 0 50px 0;
             position: relative;
         }
@@ -40,7 +40,7 @@
             color: #23b7bb;
         }
         #all{
-            background: url("../public/images/tennis 2.jpeg") fixed;
+            background: url("../public/images/tennis1.jpg") no-repeat fixed;
             color: antiquewhite;
         }
         table{
@@ -53,7 +53,7 @@
             z-index: 1;
             top: 0;
             left: 0;
-            background-color: #4c332d;
+            background-color: #3d210b;
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 60px;
@@ -62,13 +62,14 @@
             padding: 8px 8px 8px 32px;
             text-decoration: none;
             font-size: 25px;
-            color: #818181;
+            color: #8b7533;
             display: block;
             transition: 0.3s;
         }
 
         .sidenav a:hover {
             color: #f1f1f1;
+            text-decoration: underline;
         }
 
         .sidenav .closebtn {
@@ -96,6 +97,10 @@
             .sidenav a {font-size: 18px;}
         }
 
+        ul{
+            list-style-type: none;
+        }
+
     </style>
 </head>
 <body>
@@ -106,51 +111,51 @@
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <ul>
-                <li><a href="membre.php">Accueil</a></li>
+                <li><a href="membre.php"><i class="glyphicon glyphicon-home"></i> Accueil</a></li>
                 <li><a href="membre.php?p=reservation">Reservations</a></li>
                 <li><a href="membre.php?p=manifestation">Manifestations</a></li>
                 <li><a href="membre.php?p=cours">Cours</a></li>
                 <li><a href="membre.php?p=profil">Mon Profil</a></li>
-                <li><a href="membre.php?p=deconnexion">Deconnexion</a></li>
+                <li><a href="membre.php?p=deconnexion"><i class="glyphicon glyphicon-log-out"></i> Deconnexion</a></li>
             </ul>
         </div>
         <?php } elseif(isset($_SESSION['id_e'])) {?>
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <ul>
-                        <li><a href="entraineur.php">Planing</a></li>
+                        <li><a href="entraineur.php"><i class="glyphicon glyphicon-home"></i> Planing</a></li>
                         <li><a href="entraineur.php?p=court">Gérer les courts</a></li>
                         <li><a href="entraineur.php?p=manifestation">Créer des manifestations</a></li>
                         <li><a href="entraineur.php?p=cours">Gérer les cours</a></li>
-                        <li><a href="entraineur.php?p=deconnexion">Deconnexion</a></li>
+                        <li><a href="entraineur.php?p=deconnexion"><i class="glyphicon glyphicon-log-out"></i> Deconnexion</a></li>
                     </ul>
                 </div>
         <?php } elseif (isset($_SESSION['id_a'])){?>
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <ul>
-                        <li><a href="admin.php">Accueil</a></li>
+                        <li><a href="admin.php"><i class="glyphicon glyphicon-home"></i> Accueil</a></li>
                         <li><a href="admin.php?p=gestionEntraineurs">All entraineurs</a></li>
                         <li><a href="admin.php?p=gestionMembers">All members</a></li>
                         <li><a href="admin.php?p=gestionCourts">All courts</a></li>
                         <li><a href="admin.php?p=gestionMateriels">All matériels</a></li>
                         <li><a href="admin.php?p=gestionManifestations">All manifestation</a></li>
-                        <li><a href="admin.php?p=deconnexion">Deconnexion</a></li>
+                        <li><a href="admin.php?p=deconnexion"><i class="glyphicon glyphicon-log-out"></i> Deconnexion</a></li>
                     </ul>
                 </div>
         <?php } else { ?>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="<?= 'index.php?p=reservationNonAdherents'?>">Réservation</a></li>
-                <li><a href="index.php?p=manifestation">Manifestation</a></li>
-                <li><a href="index.php?p=inscription">S'inscrire (Nouvel utilisateur)</a></li>
-                <li><a href="index.php?p=connexion">Connexion</a></li>
+                <li><a href="index.php"><i class="glyphicon glyphicon-home"></i> Accueil</a></li>
+                <li><a href="<?= 'index.php?p=reservationNonAdherents'?>"><i class="glyphicon glyphicon-credit-card"></i> Réservation</a></li>
+                <li><a href="index.php?p=manifestation"><i class="glyphicon glyphicon-book"></i> Manifestation</a></li>
+                <li><a href="index.php?p=inscription"><i class="glyphicon glyphicon-plus-sign"></i> S'inscrire (Nouvel utilisateur)</a></li>
+                <li><a href="index.php?p=connexion"> <i class="glyphicon glyphicon-log-in"></i> Connexion</a></li>
             </ul>
         </div>
         <?php } ?>
-        <header class="row">
+        <header class="row" id="mainty">
             <h1>Centre de gestion d'un centre de tennis</h1>
         </header>
         <div class="row" id="main">
@@ -163,11 +168,14 @@
     </div>
     <script>
         function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("mySidenav").style.width = "350px";
+            document.getElementById('main').style.opacity = "0.5";
+            document.getElementById('mainty').style.boxShadow = "rgba(0, 0, 0, 0.5) 0 0 250px 0";
         }
 
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
+            document.getElementById('main').style.opacity = "1";
         }
     </script>
 </body>
