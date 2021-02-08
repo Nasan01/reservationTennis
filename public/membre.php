@@ -44,6 +44,12 @@ if($p === "accueil"){
 }elseif($p === 'pager'){
     $app->setTitlePage('Cours');
     require ROOT . '/page/adherents/cours.php';
+}elseif($p === 'matReservation'){
+    $app->setTitlePage('Reservation des matériels');
+    require ROOT . '/page/viewReservation.php';
+}elseif($p === 'faireReservation'){
+    $app->setTitlePage('make a reservation');
+    require ROOT . '/page/makeReservation.php';
 }
 
 
