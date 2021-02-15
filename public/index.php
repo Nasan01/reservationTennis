@@ -10,59 +10,59 @@ App::load();
 
 $app = App::getInstance();
 
-if(isset($_GET['p'])){
+if (isset($_GET['p'])) {
     $p = $_GET['p'];
-}else{
+} else {
     $p = 'accueilNonAdherents';
 }
 
-if(isset($_GET['action'])){
+if (isset($_GET['action'])) {
     $action = $_GET['action'];
-}else{
+} else {
     $action = ' ';
 }
 
 ob_start();
 
-if($p === 'accueilNonAdherents'){
+if ($p === 'accueilNonAdherents') {
     $app->setTitlePage('Accueil');
     require ROOT . '/page/nonAdherents/accueil.php';
-}elseif ($p === 'reservationNonAdherents'){
+} elseif ($p === 'reservationNonAdherents') {
     $app->setTitlePage('reservation');
     require ROOT . '/page/nonAdherents/reservation.php';
-}elseif ($p === 'pager'){
+} elseif ($p === 'pager') {
     $app->setTitlePage('reservation');
     require ROOT . '/page/nonAdherents/reservation.php';
-}elseif ($p === 'manifestation'){
+} elseif ($p === 'manifestation') {
     $app->setTitlePage('manifestation');
     require ROOT . '/page/manifestation.php';
-}elseif ($p === 'inscription'){
+} elseif ($p === 'inscription') {
     $app->setTitlePage('Inscription');
     require ROOT . '/page/nonAdherents/inscription.php';
-}elseif($p === 'attente'){
+} elseif ($p === 'attente') {
     $app->setTitlePage('waitConfirmation');
     require  ROOT . '/page/nonAdherents/attente.php';
-}elseif($p === 'connexion'){
+} elseif ($p === 'connexion') {
     $app->setTitlePage('Connexion');
     require ROOT . '/page/nonAdherents/connexion.php';
-}elseif($p === 'conEntraineur'){
+} elseif ($p === 'conEntraineur') {
     $app->setTitlePage('Entraineur connexion');
     require ROOT . '/page/entraineurs/connexion.php';
-}elseif($p === "inscriptionManifestation"){
+} elseif ($p === "inscriptionManifestation") {
     $app->setTitlePage('none');
     require ROOT . '/page/inscrmanifestation.php';
-}elseif($p === "conAdmin"){
+} elseif ($p === "conAdmin") {
     $app->setTitlePage('Page administration');
     require ROOT . '/page/admin/connexion.php';
-}elseif($p === 'stageIndex'){
+} elseif ($p === 'stageIndex') {
     $app->setTitlePage("Manifestation");
     require ROOT . "/page/manifestation.php";
-}elseif($p === 'manifPager'){
+} elseif ($p === 'manifPager') {
     $app->setTitlePage("Manifestation");
     require ROOT . "/page/manifestation.php";
 }
 
-if($action === 'inscription'){
+if ($action === 'inscription') {
     require  ROOT . "/page/action/actionInscription.php";
 }
 

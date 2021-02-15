@@ -13,7 +13,7 @@
                 <tr>
                     <td><?= $all->type_materiel; ?></td>
                     <td><?= $all->quantite_materiel; ?></td>
-                    <td><a href="membre.php?p=faireReservation&idMateriel=<?= $all->id_materiel; ?>">Click if you want to do an reservation</a></td>
+                    <td><a href="entraineur.php?p=faireReservation&idMateriel=<?= $all->id_materiel; ?>">Click if you want to do an reservation</a></td>
                 </tr>
             <?php endforeach; ?>
         </table>
@@ -26,13 +26,13 @@
                     <td>statues</td>
                 </tr>
 
-                <?php foreach (App\Table\TableMaterielReservation::getReservationByUser($_SESSION['id_m']) as $about) : ?>
+                <?php foreach (App\Table\TableMaterielReservation::getReservationByEntraineur($_SESSION['id_e']) as $about) : ?>
                     <tr>
                         <td><?= $about->materielReserver; ?></td>
                         <td><?= $about->quantiteReserver; ?></td>
                         <td>
                             <?php if ($about->enReservation == 1) { ?>
-                                <a href="membre.php?p=rendreReservation&id_r=<?= $about->id_matReservation; ?>">Rendre </a>
+                                <a href="entraineur.php?p=rendreReservation&id_r=<?= $about->id_matReservation; ?>">Rendre </a>
                             <?php } elseif ($about->enReservation == 0) { ?>
                                 <p style="font-size: 1rem; color:crimson;"><b><i>Rendu (merci de votre coopération) </i></b></p>
                             <?php } ?>

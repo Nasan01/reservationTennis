@@ -9,47 +9,50 @@ $app = App::getInstance();
 $membre = new \App\Table\TableMembre();
 
 
-if(!$membre->is_connected()){
+if (!$membre->is_connected()) {
     App::connectPlease();
 }
 
-if(isset($_GET['p'])){
+if (isset($_GET['p'])) {
     $p = $_GET['p'];
-}else{
+} else {
     $p = 'accueil';
 }
 
 ob_start();
 
-if($p === "accueil"){
+if ($p === "accueil") {
     $app->setTitlePage('Accueil');
     require ROOT . "/page/adherents/accueil.php";
-}elseif($p === 'profil'){
+} elseif ($p === 'profil') {
     $app->setTitlePage('profil');
     require ROOT . "/page/adherents/profil.php";
-}elseif($p === 'modification'){
+} elseif ($p === 'modification') {
     $app->setTitlePage('profilModification');
     require ROOT . "/page/adherents/modificationProfil.php";
-}elseif($p === 'deconnexion'){
+} elseif ($p === 'deconnexion') {
     require ROOT . '/page/adherents/deconnexion.php';
-}elseif($p === 'reservation'){
+} elseif ($p === 'reservation') {
     $app->setTitlePage('reservation');
     require ROOT . '/page/nonAdherents/reservation.php';
-}elseif ($p === 'manifestation'){
+} elseif ($p === 'manifestation') {
     $app->setTitlePage('manifestation');
     require ROOT . '/page/manifestation.php';
-}elseif($p === 'cours'){
+} elseif ($p === 'cours') {
     $app->setTitlePage('Cours');
     require ROOT . '/page/adherents/cours.php';
-}elseif($p === 'pager'){
+} elseif ($p === 'pager') {
     $app->setTitlePage('Cours');
     require ROOT . '/page/adherents/cours.php';
-}elseif($p === 'matReservation'){
+} elseif ($p === 'matReservation') {
     $app->setTitlePage('Reservation des matériels');
     require ROOT . '/page/viewReservation.php';
-}elseif($p === 'faireReservation'){
+} elseif ($p === 'faireReservation') {
     $app->setTitlePage('make a reservation');
     require ROOT . '/page/makeReservation.php';
+} elseif ($p === 'rendreReservation') {
+    $app->setTitlePage('render');
+    require ROOT . '/page/rendreReservation.php';
 }
 
 
