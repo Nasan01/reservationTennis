@@ -1,10 +1,13 @@
 <?php
 
+use App\Table\TableMateriel;
 use App\Table\TableMaterielReservation;
 
 $all = \App\Table\TableMateriel::getOneMateriel($_GET['idMateriel']);
 if (isset($_POST['reserver'])) {
     $reservation = new TableMaterielReservation();
+    $updateMateriel = new TableMateriel();
+
     if (isset($_SESSION['id_m'])) {
         $reservation->addResevation(
             intval($_SESSION['id_m']),
@@ -13,6 +16,7 @@ if (isset($_POST['reserver'])) {
             intval($_POST['qtAReserver']),
             1
         );
+        $updateMateriel->updateQuantite(intval($_POST['qtAReserver']), $_GET['idMateriel']);
         header('Location: membre.php?p=matReservation');
     } elseif (isset($_SESSION['id_e'])) {
         $reservation->addResevation(
@@ -22,6 +26,7 @@ if (isset($_POST['reserver'])) {
             $_POST['qtAReserver'],
             1
         );
+        $updateMateriel->updateQuantite(intval($_POST['qtAReserver']), $_GET['idMateriel']);
         header('Location: entraineur.php?p=matReservation');
     }
 }

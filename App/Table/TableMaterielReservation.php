@@ -64,4 +64,18 @@ class TableMaterielReservation
             [$up, $id]
         );
     }
+
+    public static function getOneTest($id)
+    {
+        $db = new Database('reservationTennis');
+
+        $data = $db->prepare(
+            "SELECT * FROM materielReservation WHERE id_matReservation = ?",
+            [$id],
+            "App\Table\TableMaterielReservation",
+            true
+        );
+
+        return $data;
+    }
 }

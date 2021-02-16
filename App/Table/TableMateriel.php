@@ -10,7 +10,8 @@ class TableMateriel
 {
     protected $table = 'materiel';
 
-    public static function getAllMateriel(){
+    public static function getAllMateriel()
+    {
         $db = new Database('reservationTennis');
         $data = $db->query(
             "SELECT * FROM materiel",
@@ -20,10 +21,11 @@ class TableMateriel
         return $data;
     }
 
-    public static function getOneMateriel($id){
+    public static function getOneMateriel($id)
+    {
         $db = new Database('reservationTennis');
         $data = $db->query(
-            "SELECT * FROM materiel WHERE id_materiel = " .$id,
+            "SELECT * FROM materiel WHERE id_materiel = " . $id,
             'App\Table\TableMateriel',
             true
         );
@@ -31,19 +33,21 @@ class TableMateriel
         return $data;
     }
 
-    public function addMateriel($type, $quantite){
+    public function addMateriel($type, $quantite)
+    {
         $db = new Database('reservationTennis');
         $db->insert(
             "INSERT INTO materiel(type_materiel, quantite_materiel)
                       VALUES (:type, :quantite)",
             [
-                'type'=>$type,
-                'quantite'=>intval($quantite)
+                'type' => $type,
+                'quantite' => intval($quantite)
             ]
         );
     }
 
-    public function modifMateriel($type, $quantite, $id){
+    public function modifMateriel($type, $quantite, $id)
+    {
         $db = new Database('reservationTennis');
         $db->insert(
             "UPDATE materiel SET
@@ -51,22 +55,46 @@ class TableMateriel
                             quantite_materiel = :quantite
                       WHERE id_materiel = :id",
             [
-                'type'=>$type,
-                'quantite'=>intval($quantite),
-                'id'=>$id
+                'type' => $type,
+                'quantite' => intval($quantite),
+                'id' => $id
             ]
         );
     }
 
-    public function deleteMateriel($id){
+    public function deleteMateriel($id)
+    {
         $db = new Database('reservationTennis');
         $db->insert(
             "DELETE FROM materiel 
                       WHERE id_materiel = :id",
             [
-                'id'=>$id
+                'id' => $id
             ]
         );
     }
 
+    public function updateQuantite($quantite, $id)
+    {
+        $db = new Database('reservationTennis');
+        $db->insert(
+            "UPDATE materiel SET quantiteReserver = ?
+              WHERE type_materiel = ?",
+            [
+                $quantite, $id
+            ]
+        );
+    }
+
+    public function getOneByType($type)
+    {
+        $db = new Database('reservationTennis');
+        $data = $db->query(
+            "SELECT * FROM materiel WHERE type_materiel = " . $type,
+            'App\Table\TableMateriel',
+            true
+        );
+
+        return $data;
+    }
 }

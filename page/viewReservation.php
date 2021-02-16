@@ -7,12 +7,17 @@
                 <td>Quantité de matériel</td>
                 <td>State</td>
             </tr>
-            <?php
-
-            foreach (\App\Table\TableMateriel::getAllMateriel() as $all) : ?>
+            <?php foreach (\App\Table\TableMateriel::getAllMateriel() as $all) : ?>
+                <?php
+                $aff = intval($all->quantite_materiel) - intval($all->quantiteReserver);
+                var_dump($aff);
+                if ($aff < 0) {
+                    $aff = 0;
+                }
+                ?>
                 <tr>
                     <td><?= $all->type_materiel; ?></td>
-                    <td><?= $all->quantite_materiel; ?></td>
+                    <td><?= $aff; ?></td>
                     <td><a href="membre.php?p=faireReservation&idMateriel=<?= $all->id_materiel; ?>">Click if you want to do an reservation</a></td>
                 </tr>
             <?php endforeach; ?>

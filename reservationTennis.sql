@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le : mer. 03 fév. 2021 à 11:02
--- Version du serveur :  10.4.14-MariaDB
--- Version de PHP : 7.4.10
+-- Host: localhost
+-- Generation Time: Feb 16, 2021 at 11:33 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `reservationTennis`
+-- Database: `reservationTennis`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `login_admin`, `mdp_admin`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `admin` (`id_admin`, `login_admin`, `mdp_admin`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `cours`
+-- Table structure for table `cours`
 --
 
 CREATE TABLE `cours` (
@@ -58,17 +58,18 @@ CREATE TABLE `cours` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `cours`
+-- Dumping data for table `cours`
 --
 
 INSERT INTO `cours` (`id_cours`, `nomCours_8_10`, `nomCours_10_12`, `nomCours_12_14`, `nomCours_14_16`, `nomCours_16_18`, `nomCours_18_20`, `date_cours`) VALUES
 (1, 'cours pour debutant', 'tennis linux', 'tennis appliquer', ' ', 'java tennis', 'tennis theorie', '2020-12-14'),
-(2, 'Philosophie tennis', ' ', 'math tennis', ' tennis php', ' ', 'Informatique Tennis', '2020-12-15');
+(2, 'Philosophie tennis', ' ', 'math tennis', ' tennis php', ' ', 'Informatique Tennis', '2020-12-15'),
+(3, 'cours tennis', ' ', ' ', ' ', ' ', ' skljfkdsf', '2020-12-16');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `court`
+-- Table structure for table `court`
 --
 
 CREATE TABLE `court` (
@@ -79,18 +80,18 @@ CREATE TABLE `court` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `court`
+-- Dumping data for table `court`
 --
 
 INSERT INTO `court` (`id_court`, `nom_court`, `surface_court`, `etat_court`) VALUES
-(1, 'Central', 'Gazon', 'propre'),
+(1, 'Central', 'Gazon', 'sale'),
 (2, 'Indoor', 'Moquette', 'propre'),
 (3, 'Plage', 'Sable', 'propre');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `date_heure`
+-- Table structure for table `date_heure`
 --
 
 CREATE TABLE `date_heure` (
@@ -101,7 +102,7 @@ CREATE TABLE `date_heure` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `date_heure`
+-- Dumping data for table `date_heure`
 --
 
 INSERT INTO `date_heure` (`id_dateHeure`, `plage_horaire`, `nbr_reservation`, `truc_reserver`) VALUES
@@ -115,7 +116,7 @@ INSERT INTO `date_heure` (`id_dateHeure`, `plage_horaire`, `nbr_reservation`, `t
 -- --------------------------------------------------------
 
 --
--- Structure de la table `entraineurs`
+-- Table structure for table `entraineurs`
 --
 
 CREATE TABLE `entraineurs` (
@@ -127,7 +128,7 @@ CREATE TABLE `entraineurs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `entraineurs`
+-- Dumping data for table `entraineurs`
 --
 
 INSERT INTO `entraineurs` (`id_entraineur`, `nom_entraineur`, `prenom_entraineur`, `login_entraineur`, `mdp_entraineur`) VALUES
@@ -139,7 +140,7 @@ INSERT INTO `entraineurs` (`id_entraineur`, `nom_entraineur`, `prenom_entraineur
 -- --------------------------------------------------------
 
 --
--- Structure de la table `manifestation`
+-- Table structure for table `manifestation`
 --
 
 CREATE TABLE `manifestation` (
@@ -159,38 +160,74 @@ CREATE TABLE `manifestation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `manifestation`
+-- Dumping data for table `manifestation`
 --
 
 INSERT INTO `manifestation` (`id_manifestation`, `titre_manifestation`, `type_manifestation`, `horaire_manifestation`, `organisateur_manifestation`, `tranche_age_manifestation`, `niveau_req_manifestation`, `effectif_manifestation`, `animateur_manifestation`, `nbre_inscrit`, `court_manifestation`, `materiel_manifestation`, `inscrit_id`) VALUES
 (2, 'stage pour les mini débutants', 'stage', '12h - 16h le 17 Janvier 2020', 'mr le test', '10-20', 'noob', '6-40', 'mr le animateur', 1, 'outdoor', 'raquette 10 - balle 100', 0),
-(3, 'un petit tournoi pour tous le monde', 'tournoi', '12h - 18h le 20 janvier', 'Mr me', '10-25', 'all ', '40', 'Mr le animateur', 0, 'central', 'raquette 6 - balle 50', 0);
+(3, 'un petit tournoi pour tous le monde', 'tournoi', '12h - 18h le 20 janvier', 'Mr me', '10-25', 'all ', '40', 'Mr le animateur', 2, 'central', 'raquette 6 - balle 50', 0);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `materiel`
+-- Table structure for table `materiel`
 --
 
 CREATE TABLE `materiel` (
   `id_materiel` int(11) NOT NULL,
   `type_materiel` varchar(25) NOT NULL,
-  `quantite_materiel` int(11) NOT NULL
+  `quantite_materiel` int(11) NOT NULL,
+  `quantiteReserver` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `materiel`
+-- Dumping data for table `materiel`
 --
 
-INSERT INTO `materiel` (`id_materiel`, `type_materiel`, `quantite_materiel`) VALUES
-(1, 'Filet', 10),
-(2, 'Balle', 500),
-(4, 'Filet', 70);
+INSERT INTO `materiel` (`id_materiel`, `type_materiel`, `quantite_materiel`, `quantiteReserver`) VALUES
+(1, 'Filet', 10, 3),
+(2, 'Balle', 500, 100),
+(4, 'Raquette', 70, 0),
+(5, 'ballon test', 1000, 0);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `membres`
+-- Table structure for table `materielReservation`
+--
+
+CREATE TABLE `materielReservation` (
+  `id_matReservation` int(11) NOT NULL,
+  `quiLeReserve` int(11) NOT NULL DEFAULT 0,
+  `quiLeReserveE` int(11) NOT NULL DEFAULT 0,
+  `materielReserver` varchar(55) NOT NULL,
+  `quantiteReserver` int(11) NOT NULL,
+  `enReservation` tinyint(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `materielReservation`
+--
+
+INSERT INTO `materielReservation` (`id_matReservation`, `quiLeReserve`, `quiLeReserveE`, `materielReserver`, `quantiteReserver`, `enReservation`) VALUES
+(2, 6, 0, 'Balle', 100, 0),
+(3, 6, 0, 'Filet', 2, 0),
+(4, 1, 0, 'Filet', 1, 0),
+(5, 1, 0, 'Balle', 10, 0),
+(6, 1, 0, 'Filet', 4, 0),
+(7, 0, 1, 'Filet', 2, 0),
+(8, 0, 1, 'Balle', 4, 0),
+(9, 6, 0, 'Raquette', 45, 0),
+(10, 6, 0, 'Filet', 3, 0),
+(11, 0, 1, 'Raquette', 23, 0),
+(12, 6, 0, 'Filet', 3, 0),
+(13, 6, 0, 'Balle', 100, 0),
+(14, 6, 0, 'ballon test', 300, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `membres`
 --
 
 CREATE TABLE `membres` (
@@ -198,7 +235,7 @@ CREATE TABLE `membres` (
   `nom_membre` varchar(25) NOT NULL,
   `prenom_membre` varchar(30) NOT NULL,
   `rue_membre` varchar(25) NOT NULL,
-  `codePostal_membre` varchar(15) NOT NULL,
+  `codePostal_membre` varchar(255) NOT NULL,
   `ville_membre` varchar(20) NOT NULL,
   `dateNaiss_membre` date NOT NULL,
   `tel_membre` int(11) NOT NULL,
@@ -208,20 +245,21 @@ CREATE TABLE `membres` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `membres`
+-- Dumping data for table `membres`
 --
 
 INSERT INTO `membres` (`id_membre`, `nom_membre`, `prenom_membre`, `rue_membre`, `codePostal_membre`, `ville_membre`, `dateNaiss_membre`, `tel_membre`, `numFFT_membre`, `login_membre`, `mdp_membre`) VALUES
 (1, 'Avo', 'Ram', '24 malaza', '234postalcode', 'Antananarivo', '2003-01-20', 340133099, 1, 'avo', 'c6252b4121d43ed6403081c08832c46f28074789'),
 (5, 'Tsiory', 'Soa', 'Tana', '34te', 'Betongole', '2020-12-01', 87345435, 34355, 'tsiory', '1e3e84f0a3bfea349a18ff6e2dccfb3866b9d11f'),
-(6, 'Tsy putin', 'de merde', 'pute', 'tsy masosotay', 'fuck', '2001-01-01', 1234124, 123, 'putin', '89749fe500cbbaba80324cab455e597c0ccbdf0a'),
+(6, 'Tsy putin', 'de merde', 'pute', 'tsy masosotay eee', 'fuck', '2001-01-01', 1234124, 123, 'putin', '89749fe500cbbaba80324cab455e597c0ccbdf0a'),
 (7, 'encore', 'putin', 'de', '34', 'merde', '2020-12-22', 3263656, 324, 'encore', 'af580f7aa20f8bffc32174fd64e3db5031e5aeb6'),
-(8, 'test', 'test', 'test', 'test', 'test', '2020-12-22', 235345, 235366, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3');
+(8, 'test', 'test', 'test', 'test', 'test', '2020-12-22', 235345, 235366, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3'),
+(9, 'must', 'must', 'must', 'must', 'must', '2021-02-01', 87546345, 235267, 'must', '5723d165ed59595207e8c0c85bb720c83f4ce809');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `reservation`
+-- Table structure for table `reservation`
 --
 
 CREATE TABLE `reservation` (
@@ -233,7 +271,7 @@ CREATE TABLE `reservation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `reservation`
+-- Dumping data for table `reservation`
 --
 
 INSERT INTO `reservation` (`id_reservation`, `outils_Areserver`, `nom_reservation`, `date_reservation`, `heure_reservation`) VALUES
@@ -243,7 +281,7 @@ INSERT INTO `reservation` (`id_reservation`, `outils_Areserver`, `nom_reservatio
 -- --------------------------------------------------------
 
 --
--- Structure de la table `test`
+-- Table structure for table `test`
 --
 
 CREATE TABLE `test` (
@@ -258,7 +296,7 @@ CREATE TABLE `test` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `test`
+-- Dumping data for table `test`
 --
 
 INSERT INTO `test` (`id_test`, `date`, `nbr_8_10`, `nbr_10_12`, `nbr_12_14`, `nbr_14_16`, `nbr_16_18`, `nbr_18_20`) VALUES
@@ -279,124 +317,136 @@ INSERT INTO `test` (`id_test`, `date`, `nbr_8_10`, `nbr_10_12`, `nbr_12_14`, `nb
 (15, '2020-12-28', 1, 0, 2, 3, 1, 2);
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Index pour la table `cours`
+-- Indexes for table `cours`
 --
 ALTER TABLE `cours`
   ADD PRIMARY KEY (`id_cours`);
 
 --
--- Index pour la table `court`
+-- Indexes for table `court`
 --
 ALTER TABLE `court`
   ADD PRIMARY KEY (`id_court`);
 
 --
--- Index pour la table `date_heure`
+-- Indexes for table `date_heure`
 --
 ALTER TABLE `date_heure`
   ADD PRIMARY KEY (`id_dateHeure`);
 
 --
--- Index pour la table `entraineurs`
+-- Indexes for table `entraineurs`
 --
 ALTER TABLE `entraineurs`
   ADD PRIMARY KEY (`id_entraineur`);
 
 --
--- Index pour la table `manifestation`
+-- Indexes for table `manifestation`
 --
 ALTER TABLE `manifestation`
   ADD PRIMARY KEY (`id_manifestation`);
 
 --
--- Index pour la table `materiel`
+-- Indexes for table `materiel`
 --
 ALTER TABLE `materiel`
   ADD PRIMARY KEY (`id_materiel`);
 
 --
--- Index pour la table `membres`
+-- Indexes for table `materielReservation`
+--
+ALTER TABLE `materielReservation`
+  ADD PRIMARY KEY (`id_matReservation`);
+
+--
+-- Indexes for table `membres`
 --
 ALTER TABLE `membres`
   ADD PRIMARY KEY (`id_membre`);
 
 --
--- Index pour la table `reservation`
+-- Indexes for table `reservation`
 --
 ALTER TABLE `reservation`
   ADD PRIMARY KEY (`id_reservation`),
   ADD UNIQUE KEY `heure_reservation` (`heure_reservation`);
 
 --
--- Index pour la table `test`
+-- Indexes for table `test`
 --
 ALTER TABLE `test`
   ADD PRIMARY KEY (`id_test`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT pour la table `cours`
+-- AUTO_INCREMENT for table `cours`
 --
 ALTER TABLE `cours`
-  MODIFY `id_cours` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_cours` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table `court`
+-- AUTO_INCREMENT for table `court`
 --
 ALTER TABLE `court`
-  MODIFY `id_court` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_court` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `entraineurs`
+-- AUTO_INCREMENT for table `entraineurs`
 --
 ALTER TABLE `entraineurs`
   MODIFY `id_entraineur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `manifestation`
+-- AUTO_INCREMENT for table `manifestation`
 --
 ALTER TABLE `manifestation`
   MODIFY `id_manifestation` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table `materiel`
+-- AUTO_INCREMENT for table `materiel`
 --
 ALTER TABLE `materiel`
-  MODIFY `id_materiel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_materiel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `membres`
+-- AUTO_INCREMENT for table `materielReservation`
+--
+ALTER TABLE `materielReservation`
+  MODIFY `id_matReservation` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `membres`
 --
 ALTER TABLE `membres`
-  MODIFY `id_membre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_membre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT pour la table `reservation`
+-- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
   MODIFY `id_reservation` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `test`
+-- AUTO_INCREMENT for table `test`
 --
 ALTER TABLE `test`
   MODIFY `id_test` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
