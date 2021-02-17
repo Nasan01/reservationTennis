@@ -1,0 +1,23 @@
+#test{
+    background-color: #DCCB43;
+    box-shadow:  rgba(0, 0, 0, 0.5);
+    height: 66px;
+    text-align: center;
+}
+
+#myparent div{
+    border: 1px solid #000000;
+    text-align: center;
+    margin: 27px;
+    padding: 37px;
+}
+
+#footer{
+    color: aliceblue;
+    height: 60px;
+    padding: 12px;
+    background: #272A02;
+}
+a{
+    color: rgba(26,103,141,0.75);
+}
